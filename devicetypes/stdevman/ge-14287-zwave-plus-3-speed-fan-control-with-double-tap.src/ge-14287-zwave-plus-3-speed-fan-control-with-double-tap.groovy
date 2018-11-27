@@ -33,6 +33,7 @@ metadata {
 		capability "Button"
 		capability "Actuator"
 		capability "Indicator"
+        capability "Configuration"
 		capability "Health Check"
 		capability "Switch"
 		capability "Polling"
