@@ -166,7 +166,7 @@ def parse(String description) {
 def createEvent(physicalgraph.zwave.commands.basicv1.BasicReport cmd, Map item1) {
 	def result = doCreateEvent(cmd, item1)
 	for (int i = 0; i < result.size(); i++) {
-  	result[i].type = "digital"
+  	result[i].type = "physical"
 	}
 	log.trace "BasicReport"
   result
