@@ -154,6 +154,7 @@ def parse(String description) {
 	def cmd = zwave.parse(description, [0x20: 1, 0x26: 1, 0x70: 1])
 	if (cmd) {
 		result = createEvent(cmd, item1)
+                log.debug "Parsed ${cmd} to ${result.inspect()}"
 	}
 	else {
 		item1.displayed = displayed(description, item1.isStateChange)
