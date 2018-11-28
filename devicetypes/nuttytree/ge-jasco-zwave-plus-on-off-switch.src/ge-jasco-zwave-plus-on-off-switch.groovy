@@ -39,6 +39,7 @@ metadata {
 		capability "Actuator"
 		capability "Button"
 		capability "Configuration"
+		capability "Health Check"
 		capability "Indicator"
 		capability "Polling"
 		capability "Refresh"
@@ -46,8 +47,15 @@ metadata {
 		capability "Switch"
 
 		attribute "inverted", "enum", ["inverted", "not inverted"]
+
+		command "doubleUp"
+		command "doubleDown"
+		command "inverted"
+		command "notInverted"
+
         // These include version because there are older firmwares that don't support double-tap or the extra association groups
 		fingerprint mfr:"0063", prod:"4952", model: "3036", ver: "5.20", deviceJoinName: "GE Z-Wave Plus Wall Switch"
+		fingerprint mfr:"0063", prod:"4952", model: "3036", ver: "5.24", deviceJoinName: "GE Z-Wave Plus Wall Switch"
 		fingerprint mfr:"0063", prod:"4952", model: "3037", ver: "5.20", deviceJoinName: "GE Z-Wave Plus Toggle Switch"
 		fingerprint mfr:"0063", prod:"4952", model: "3038", ver: "5.20", deviceJoinName: "GE Z-Wave Plus Toggle Switch"
 		fingerprint mfr:"0063", prod:"4952", model: "3130", ver: "5.20", deviceJoinName: "Jasco Z-Wave Plus Wall Switch"
@@ -370,3 +378,4 @@ private parseAssocGroupList(list, group) {
     }
     
     return nodes
+}
