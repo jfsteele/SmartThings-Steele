@@ -33,7 +33,7 @@ metadata {
 		capability "Button"
 		capability "Actuator"
 		capability "Indicator"
-        capability "Configuration"
+		capability "Configuration"
 		capability "Health Check"
 		capability "Switch"
 		capability "Polling"
@@ -41,12 +41,12 @@ metadata {
 		capability "Sensor"
 
 		command "doubleUp"
-        command "doubleDown"
+		command "doubleDown"
 		command "lowSpeed"
 		command "medSpeed"
 		command "highSpeed"
 		command "inverted"
-        command "notInverted"
+		command "notInverted"
 
 		attribute "currentState", "string"
 		attribute "inverted", "enum", ["inverted", "not inverted"]
