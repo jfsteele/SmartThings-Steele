@@ -368,9 +368,9 @@ def refresh() {
 	def cmds = []
 	cmds << zwave.switchBinaryV1.switchBinaryGet().format()
 	cmds << zwave.switchMultilevelV1.switchMultilevelGet().format()
-    cmds << zwave.configurationV2.configurationGet(parameterNumber: 3).format()
-    cmds << zwave.configurationV2.configurationGet(parameterNumber: 4).format()
-    cmds << zwave.associationV2.associationGet(groupingIdentifier: 3).format()
+	cmds << zwave.configurationV2.configurationGet(parameterNumber: 3).format()
+	cmds << zwave.configurationV2.configurationGet(parameterNumber: 4).format()
+	cmds << zwave.associationV2.associationGet(groupingIdentifier: 3).format()
 	delayBetween(cmds,500)
 }
 
