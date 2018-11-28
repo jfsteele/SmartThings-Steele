@@ -169,6 +169,7 @@ def createEvent(physicalgraph.zwave.commands.basicv1.BasicReport cmd, Map item1)
   	result[i].type = "physical"
 	}
 	log.trace "BasicReport"
+        log.trace "physical crbasicrpt"
   result
 }
 
@@ -187,6 +188,7 @@ def createEvent(physicalgraph.zwave.commands.basicv1.BasicSet cmd, Map item1) {
 		result[i].type = "physical"
 	}
 	log.trace "BasicSet"
+        log.trace "physical crbasicset"
 	result
 	}
 }
@@ -206,6 +208,7 @@ def createEvent(physicalgraph.zwave.commands.switchmultilevelv1.SwitchMultilevel
 		result[i].type = "physical"
 	}
 	log.trace "SwitchMultiLevelSet"
+        log.trace "physical swmlset"
 	result
 }
 
@@ -217,6 +220,7 @@ def createEvent(physicalgraph.zwave.commands.switchmultilevelv1.SwitchMultilevel
 		result[i].type = "digital"
 	}
 	log.trace "SwitchMultilevelReport"
+        log.trace "digital swmlrpt"
 	result
 }
 
@@ -445,10 +449,12 @@ def highSpeed() {
 
 def doubleUp() {
 	sendEvent(name: "button", value: "pushed", data: [buttonNumber: 1], descriptionText: "Double-tap up (button 1) on $device.displayName", isStateChange: true, type: "digital")
+        log.trace "digital doubleup"
 }
 
 def doubleDown() {
 	sendEvent(name: "button", value: "pushed", data: [buttonNumber: 2], descriptionText: "Double-tap down (button 2) on $device.displayName", isStateChange: true, type: "digital")
+        log.trace "digital doubledown"
 }
 
 private parseAssocGroupList(list, group) {
