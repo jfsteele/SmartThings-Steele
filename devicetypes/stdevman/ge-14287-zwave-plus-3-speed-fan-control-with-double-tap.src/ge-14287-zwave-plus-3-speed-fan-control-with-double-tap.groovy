@@ -166,7 +166,7 @@ def parse(String description) {
 def createEvent(physicalgraph.zwave.commands.basicv1.BasicReport cmd, Map item1) {
 	def result = doCreateEvent(cmd, item1)
 	for (int i = 0; i < result.size(); i++) {
-  	result[i].type = "digital"
+  	result[i].type = "physical"
 	}
 	log.trace "BasicReport"
   result
@@ -253,13 +253,14 @@ def doCreateEvent(physicalgraph.zwave.Command cmd, Map item1) {
 	
 	item1.value = cmd.value ? "on" : "off"
 	if (item1.value == "off") {
-		sendEvent(name: "currentState", value: "OFF" as String)
+		sendEvent(name: "currentState", value: "OFF" as String, type: "digital")
 	}
 	item1.handlerName = item1.value
 	item1.descriptionText = "${item1.linkText} was turned ${item1.value}"
 	item1.canBeCurrentState = true
 	item1.isStateChange = isStateChange(device, item1.name, item1.value)
 	item1.displayed = false
+        item1.type = "digital"
 
 	if (cmd.value) {
 		def item2 = new LinkedHashMap(item1)
