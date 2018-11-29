@@ -112,9 +112,9 @@ metadata {
 	}
 	preferences {
 		section("Fan Thresholds") {
-			input "lowThreshold", "number", title: "Low Threshold (typical is 33)", range: "1..99", defaultValue: 33
-			input "medThreshold", "number", title: "Medium Threshold (typical is 66)", range: "1..99", defaultValue: 66
-			input "highThreshold", "number", title: "High Threshold (typical is 99)", range: "1..99", defaultValue: 99
+			input "lowThreshold", "number", title: "Low Threshold (typical is 30)", range: "1..99", defaultValue: 30
+			input "medThreshold", "number", title: "Medium Threshold (typical is 60)", range: "1..99", defaultValue: 60
+			input "highThreshold", "number", title: "High Threshold (typical is 90)", range: "1..99", defaultValue: 90
 		}
 		input (
             type: "paragraph",
@@ -251,9 +251,9 @@ def createEvent(physicalgraph.zwave.commands.associationv2.AssociationReport cmd
 
 def doCreateEvent(physicalgraph.zwave.Command cmd, Map item1) {
 	def result = [item1]
-	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 33
-	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 66
-	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 99
+	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 30
+	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 60
+	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 90
 	item1.name = "switch"
 	
 	item1.value = cmd.value ? "on" : "off"
@@ -318,9 +318,9 @@ def off() {
 }
 
 def setLevel(value) {
-	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 33
-	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 66
-	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 99
+	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 30
+	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 60
+	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 90
 	
 	if (value == "LOW") { value = lowThresholdvalue }
 	if (value == "MED") { value = medThresholdvalue }
@@ -338,9 +338,9 @@ def setLevel(value) {
 }
 
 def setLevel(value, duration) {
-	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 33
-	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 66
-	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 99
+	def lowThresholdvalue = (settings.lowThreshold != null && settings.lowThreshold != "") ? settings.lowThreshold.toInteger() : 30
+	def medThresholdvalue = (settings.medThreshold != null && settings.medThreshold != "") ? settings.medThreshold.toInteger() : 60
+	def highThresholdvalue = (settings.highThreshold != null && settings.highThreshold != "") ? settings.highThreshold.toInteger() : 90
 
 	if (value == "LOW") { value = lowThresholdvalue }
 	if (value == "MED") { value = medThresholdvalue }
