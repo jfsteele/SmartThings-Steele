@@ -1,4 +1,4 @@
-/**
+/*
  * JFS 12/30/2018: Modified from stock SmartThings virtual switch DTH
  *
  *  Copyright 2017 SmartThings
