@@ -41,10 +41,7 @@ metadata {
         }
 
         main(["switch"])
-<<<<<<< HEAD
 //        details(["switch", "explicitOn", "explicitOff"])
-=======
->>>>>>> e62823946ba1436a544391f910a76897660459c7
         details(["switch"])
 
     }
