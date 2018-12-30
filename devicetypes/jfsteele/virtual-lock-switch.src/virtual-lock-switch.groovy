@@ -1,9 +1,7 @@
 /*
- * JFS 12/30/2018: Modified from stock SmartThings virtual switch DTH
+ *  Copyright 2019 John Steele
  *
- *  Copyright 2017 SmartThings
- *
- *  Provides a virtual switch.
+ *  Provides a virtual lock "switch" for status (updated via WebCoRE)`.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -15,6 +13,7 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  */
+
 metadata {
     definition (name: "Virtual Lock Switch", namespace: "jfsteele", author: "jfsteele") {
         capability "Actuator"
@@ -42,7 +41,8 @@ metadata {
         }
 
         main(["switch"])
-        details(["switch", "explicitOn", "explicitOff"])
+//        details(["switch", "explicitOn", "explicitOff"])
+        details(["switch"])
 
     }
 }
