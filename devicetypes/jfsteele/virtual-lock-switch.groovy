@@ -16,7 +16,7 @@
  *
  */
 metadata {
-    definition (name: "Virtual Lock Switch", namespace: "jfsteele", author: "jfsteele", runLocally: true, minHubCoreVersion: '000.021.00001', executeCommandsLocally: true, mnmn: "SmartThings", vid: "generic-switch") {
+    definition (name: "Virtual Lock Switch", namespace: "jfsteele", author: "jfsteele") {
         capability "Actuator"
         capability "Sensor"
         capability "Switch"
