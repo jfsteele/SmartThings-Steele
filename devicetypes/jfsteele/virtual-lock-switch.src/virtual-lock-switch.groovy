@@ -42,7 +42,7 @@ metadata {
         }
 
         main(["switch"])
-        details(["switch", "explicitOn", "explicitOff"])
+        details(["switch"])
 
     }
 }
