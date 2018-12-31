@@ -62,6 +62,6 @@ def off() {
 }
 
 def setBatteryLevel(level) {
-    sendEvent(name: "battery", value: level, isStateChange: false)
+    sendEvent(name: "battery", value: level)
 }
 
