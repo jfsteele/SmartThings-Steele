@@ -22,8 +22,10 @@ metadata {
         capability "Indicator"
 
         attribute "battery", "number"
+        attribute "actor", "string"
 
         command "setBatteryLevel", ["number"]
+        command "setActor", ["string"]
     }
 
     preferences {}
@@ -41,10 +43,13 @@ metadata {
         valueTile("batteryLevel", "device.battery", width: 2, height: 2, decoration: "flat") {
             state "default", label:'Battery Level\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
         }
+        valueTile("actor", "device.actor", width: 2, height: 2, decoration: "flat") {
+            state "default", label:'Actor:\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
+        }
 
         main(["switch"])
 //        details(["switch"])
-        details(["switch", "batteryLevel"])
+        details(["switch", "batteryLevel", "actor"])
 
     }
 }
@@ -62,5 +67,9 @@ def off() {
 
 def setBatteryLevel(Number level) {
     sendEvent(name: "battery", value: level)
+}
+
+def setActor(String who) {
+    sendEvent(name: "actor", value: who)
 }
 
