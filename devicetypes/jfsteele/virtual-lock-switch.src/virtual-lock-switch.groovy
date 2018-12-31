@@ -42,7 +42,7 @@ metadata {
             state "default", label: "Unlocked", action: "switch.off", icon: "st.Home.home30", backgroundColor: "#ffffff"
         }
         valueTile("batteryLevel", "device.battery", width: 2, height: 2, decoration: "flat") {
-            state "default", label:'${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
+            state "default", label:'Battery Level\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
         }
 
         main(["switch"])
