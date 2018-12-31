@@ -20,7 +20,7 @@ metadata {
         capability "Sensor"
         capability "Switch"
         attribute "battery", "number"
-        command "setBatteryLevel"
+        command "setBatteryLevel", ["number"]
     }
 
     preferences {}
