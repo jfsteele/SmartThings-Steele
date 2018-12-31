@@ -20,7 +20,7 @@ metadata {
         capability "Sensor"
         capability "Switch"
         attribute "battery", "number"
-        command "batteryLevel"
+        command "setBatteryLevel"
     }
 
     preferences {}
@@ -64,7 +64,7 @@ def off() {
     sendEvent(name: "switch", value: "off", isStateChange: true)
 }
 
-def batteryLevel(level) {
+def setBatteryLevel(level) {
     sendEvent(name: "battery", value: level, isStateChange: false)
 }
 
