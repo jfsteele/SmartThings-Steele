@@ -43,8 +43,8 @@ metadata {
         valueTile("batteryLevel", "device.battery", width: 2, height: 2, decoration: "flat") {
             state "default", label:'Battery Level\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
         }
-        valueTile("actor", "device.actor", width: 2, height: 2, decoration: "flat") {
-            state "default", label:'Actor:\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
+        valueTile("actor", "device.actor", width: 3, height: 2, decoration: "flat") {
+            state "default", label:'Actor:\n${currentValue}', defaultState: true, backgroundColor: "#ffffff"
         }
 
         main(["switch"])
