@@ -43,9 +43,8 @@ metadata {
         }
 
         main(["switch"])
-//        details(["switch", "explicitOn", "explicitOff"])
-        details(["switch", "batteryLevel"])
 //        details(["switch"])
+        details(["switch", "batteryLevel"])
 
     }
 }
@@ -61,7 +60,7 @@ def off() {
     sendEvent(name: "switch", value: "off", isStateChange: true)
 }
 
-def setBatteryLevel(level) {
+def setBatteryLevel(Number level) {
     sendEvent(name: "battery", value: level)
 }
 
