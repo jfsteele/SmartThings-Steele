@@ -19,6 +19,8 @@ metadata {
         capability "Actuator"
         capability "Sensor"
         capability "Switch"
+        attribute "battery","integer"
+        command "batteryLevel"
     }
 
     preferences {}
