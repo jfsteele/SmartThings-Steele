@@ -19,8 +19,10 @@ metadata {
         capability "Actuator"
         capability "Sensor"
         capability "Switch"
-        capability "Configuration"
+        capability "Indicator"
+
         attribute "battery", "number"
+
         command "setBatteryLevel", ["number"]
     }
 
@@ -36,12 +38,6 @@ metadata {
             }
         }
 
-        standardTile("explicitOn", "device.switch", width: 2, height: 2, decoration: "flat") {
-            state "default", label: "Locked", action: "switch.on", icon: "st.Home.home30", backgroundColor: "#ffffff"
-        }
-        standardTile("explicitOff", "device.switch", width: 2, height: 2, decoration: "flat") {
-            state "default", label: "Unlocked", action: "switch.off", icon: "st.Home.home30", backgroundColor: "#ffffff"
-        }
         valueTile("batteryLevel", "device.battery", width: 2, height: 2, decoration: "flat") {
             state "default", label:'Battery Level\n${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
         }
