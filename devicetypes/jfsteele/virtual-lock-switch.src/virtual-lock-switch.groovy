@@ -39,10 +39,14 @@ metadata {
         standardTile("explicitOff", "device.switch", width: 2, height: 2, decoration: "flat") {
             state "default", label: "Unlocked", action: "switch.off", icon: "st.Home.home30", backgroundColor: "#ffffff"
         }
+        valueTile("batteryLevel", "device.battery", width: 2, height: 2, decoration: "flat") {
+            state "default", label:'${currentValue}%', defaultState: true, backgroundColor: "#ffffff"
+        }
 
         main(["switch"])
 //        details(["switch", "explicitOn", "explicitOff"])
-        details(["switch"])
+        details(["switch", "batteryLevel"])
+//        details(["switch"])
 
     }
 }
@@ -58,6 +62,3 @@ def off() {
     sendEvent(name: "switch", value: "off", isStateChange: true)
 }
 
-def installed() {
-    on()
-}
